@@ -10,13 +10,15 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowInsetsControllerCompat
 import pro.luntan.spendsense.App
+import pro.luntan.spendsense.root.RootScreen
 
 class AppActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent { 
-            App(onThemeChanged = { ThemeChanged(it) }) 
+        setContent {
+            RootScreen()
+//            App(onThemeChanged = { ThemeChanged(it) })
         }
     }
 }
