@@ -7,9 +7,11 @@ import platform.UIKit.UIStatusBarStyleDarkContent
 import platform.UIKit.UIStatusBarStyleLightContent
 import platform.UIKit.UIViewController
 import platform.UIKit.setStatusBarStyle
+import pro.luntan.spendsense.root.RootScreen
 
-fun MainViewController(): UIViewController = ComposeUIViewController { 
-    App(onThemeChanged = { ThemeChanged(it) })
+fun MainViewController(): UIViewController = ComposeUIViewController {
+    RootScreen()
+//    App(onThemeChanged = { ThemeChanged(it) })
 }
 
 @Composable
