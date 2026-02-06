@@ -1,7 +1,6 @@
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.window.ComposeUIViewController
-import pro.luntan.spendsense.App
 import platform.UIKit.UIApplication
 import platform.UIKit.UIStatusBarStyleDarkContent
 import platform.UIKit.UIStatusBarStyleLightContent
@@ -11,7 +10,6 @@ import pro.luntan.spendsense.root.RootScreen
 
 fun MainViewController(): UIViewController = ComposeUIViewController {
     RootScreen()
-//    App(onThemeChanged = { ThemeChanged(it) })
 }
 
 @Composable

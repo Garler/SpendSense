@@ -3,7 +3,6 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import java.awt.Dimension
-import pro.luntan.spendsense.App
 import pro.luntan.spendsense.root.RootScreen
 
 fun main() = application {
@@ -14,7 +13,6 @@ fun main() = application {
     ) {
         window.minimumSize = Dimension(350, 600)
         RootScreen()
-//        App()
     }
 }
 

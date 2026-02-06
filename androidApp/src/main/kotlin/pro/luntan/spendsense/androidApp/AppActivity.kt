@@ -1,15 +1,9 @@
 package pro.luntan.spendsense.androidApp
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.platform.LocalView
-import androidx.core.view.WindowInsetsControllerCompat
-import pro.luntan.spendsense.App
 import pro.luntan.spendsense.root.RootScreen
 
 class AppActivity : ComponentActivity() {
@@ -18,19 +12,6 @@ class AppActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RootScreen()
-//            App(onThemeChanged = { ThemeChanged(it) })
-        }
-    }
-}
-
-@Composable
-private fun ThemeChanged(isDark: Boolean) {
-    val view = LocalView.current
-    LaunchedEffect(isDark) {
-        val window = (view.context as Activity).window
-        WindowInsetsControllerCompat(window, window.decorView).apply {
-            isAppearanceLightStatusBars = isDark
-            isAppearanceLightNavigationBars = isDark
         }
     }
 }
