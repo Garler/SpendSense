@@ -4,7 +4,7 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="SpendSense"
-        android:theme="@android:style/Theme.Material.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".AppActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"

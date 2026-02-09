@@ -4,6 +4,7 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import java.awt.Dimension
 import pro.luntan.spendsense.root.RootScreen
+import pro.luntan.spendsense.root.RootViewModel
 
 fun main() = application {
     Window(
@@ -11,8 +12,8 @@ fun main() = application {
         state = rememberWindowState(width = 800.dp, height = 600.dp),
         onCloseRequest = ::exitApplication,
     ) {
-        window.minimumSize = Dimension(350, 600)
-        RootScreen()
+        window.minimumSize = Dimension(360, 600)
+        RootScreen(RootViewModel())
     }
 }
 
