@@ -3,7 +3,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import java.awt.Dimension
-import pro.luntan.spendsense.root.RootScreen
+import pro.luntan.spendsense.root.compose.RootScreen
 import pro.luntan.spendsense.root.RootViewModel
 
 fun main() = application {
