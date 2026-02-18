@@ -4,7 +4,8 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="SpendSense"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name="pro.luntan.spendsense.App">
         <activity
             android:name=".AppActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"

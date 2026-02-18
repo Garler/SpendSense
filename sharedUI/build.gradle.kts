@@ -26,6 +26,8 @@ kotlin {
             api(libs.compose.resources)
             api(libs.compose.ui.tooling.preview)
             api(libs.compose.material3)
+
+            implementation(libs.settings)
         }
 
         commonTest.dependencies {
