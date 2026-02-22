@@ -7,10 +7,12 @@ import pro.luntan.spendsense.root.model.AppTab
 import pro.luntan.spendsense.root.model.RootContract
 import pro.luntan.spendsense.storage.SettingsManager
 
-class RootViewModel: BaseViewModel<RootContract.State, Nothing>() {
+class RootViewModel(
+    private val settingsManager: SettingsManager
+): BaseViewModel<RootContract.State, Nothing>() {
 
     init {
-        SettingsManager.themeIsDarkFlow.onEach { isDark ->
+        settingsManager.themeIsDarkFlow.onEach { isDark ->
             updateState { copy(themeIsDark = isDark) }
         }.launchIn(viewModelScope)
     }

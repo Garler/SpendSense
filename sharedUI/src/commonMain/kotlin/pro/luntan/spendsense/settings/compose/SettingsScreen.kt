@@ -1,7 +1,6 @@
 package pro.luntan.spendsense.settings.compose
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -41,7 +40,7 @@ fun BoxScope.SettingsScreen(
             modifier = Modifier.padding(16.dp).fillMaxWidth()
         ) {
             Text(
-                state.deviceInfo, color = AppThemeProvider.colors.onSurface,
+                state.info, color = AppThemeProvider.colors.onSurface,
                 modifier = Modifier.padding(16.dp)
             )
         }
