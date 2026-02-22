@@ -20,6 +20,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            //Compose
             api(libs.compose.runtime)
             api(libs.compose.ui)
             api(libs.compose.foundation)
@@ -27,7 +28,11 @@ kotlin {
             api(libs.compose.ui.tooling.preview)
             api(libs.compose.material3)
 
+            //Settings
             implementation(libs.settings)
+
+            //Di
+            api(libs.koin.core)
         }
 
         commonTest.dependencies {

@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import pro.luntan.spendsense.categories.CategoriesScreen
 import pro.luntan.spendsense.common.ui.AppTheme
 import pro.luntan.spendsense.common.ui.AppThemeProvider
+import pro.luntan.spendsense.di.getKoinInstance
 import pro.luntan.spendsense.events.EventsScreen
 import pro.luntan.spendsense.root.RootViewModel
 import pro.luntan.spendsense.root.model.AppTab
@@ -18,8 +19,9 @@ import pro.luntan.spendsense.settings.SettingsViewModel
 import pro.luntan.spendsense.settings.compose.SettingsScreen
 
 @Composable
-fun RootScreen(viewModel: RootViewModel) {
+fun RootScreen() {
 
+    val viewModel = getKoinInstance<RootViewModel>()
     val state by viewModel.state.collectAsState()
 
     AppTheme(
@@ -42,6 +44,6 @@ fun BoxScope.RootNavigation(selectedTab: AppTab) {
     when(selectedTab){
         AppTab.Categories -> CategoriesScreen()
         AppTab.Events -> EventsScreen()
-        AppTab.Settings -> SettingsScreen(SettingsViewModel())
+        AppTab.Settings -> SettingsScreen(getKoinInstance())
     }
 }

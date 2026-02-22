@@ -7,10 +7,9 @@ import platform.UIKit.UIStatusBarStyleLightContent
 import platform.UIKit.UIViewController
 import platform.UIKit.setStatusBarStyle
 import pro.luntan.spendsense.root.compose.RootScreen
-import pro.luntan.spendsense.root.RootViewModel
 
 fun MainViewController(): UIViewController = ComposeUIViewController {
-    RootScreen(RootViewModel())
+    RootScreen()
 }
 
 @Composable
