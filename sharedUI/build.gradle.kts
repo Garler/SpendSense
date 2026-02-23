@@ -33,6 +33,9 @@ kotlin {
 
             //Di
             api(libs.koin.core)
+
+            //Datetime
+            implementation(libs.datetime)
         }
 
         commonTest.dependencies {
