@@ -19,7 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.stringResource
-import pro.luntan.spendsense.common.ui.AppThemeProvider
+import pro.luntan.spendsense.common.ui.theme.AppThemeProvider
 import pro.luntan.spendsense.settings.SettingsViewModel
 import spendsense.sharedui.generated.resources.*
 
