@@ -1,7 +1,7 @@
 package pro.luntan.spendsense.root.model
 
 import pro.luntan.spendsense.base.BaseViewState
-import pro.luntan.spendsense.common.ui.AppPrefs
+import pro.luntan.spendsense.common.ui.theme.AppPrefs
 
 class RootContract {
 

@@ -1,4 +1,4 @@
-package pro.luntan.spendsense.common.ui
+package pro.luntan.spendsense.common.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
