@@ -9,14 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import pro.luntan.spendsense.common.ui.theme.AppThemeProvider
 import pro.luntan.spendsense.extensions.fromHex
 
 @Composable
 fun ColorLabel(colorHex: String) {
+    val color = colorHex.let {
+        runCatching { Color.fromHex(it) }.getOrDefault(AppThemeProvider.colors.accent)
+    }
     Box(
         modifier = Modifier
             .size(40.dp)
-            .background(Color.fromHex(colorHex).copy(0.8f), RoundedCornerShape(8.dp))
-            .border(2.dp, Color.fromHex(colorHex), RoundedCornerShape(8.dp))
+            .background(color.copy(0.8f), RoundedCornerShape(8.dp))
+            .border(2.dp, color, RoundedCornerShape(8.dp))
     )
 }

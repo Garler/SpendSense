@@ -20,5 +20,8 @@ data class Category(
             updateAt =  LocalDateTime.now(),
             colorHex = ""
         )
+        fun getStubs() = List(20) { index ->
+            NONE.copy(id = index.toString(), title = "category $index")
+        }
     }
 }

@@ -41,7 +41,7 @@ fun RootScreen() {
 @Composable
 fun BoxScope.RootNavigation(selectedTab: AppTab) {
     when(selectedTab){
-        AppTab.Categories -> CategoriesScreen()
+        AppTab.Categories -> CategoriesScreen(getKoinInstance())
         AppTab.Events -> EventsScreen()
         AppTab.Settings -> SettingsScreen(getKoinInstance())
     }
