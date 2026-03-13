@@ -1,6 +1,8 @@
 package pro.luntan.spendsense.di
 
 import org.koin.dsl.module
+import pro.luntan.spendsense.categories.list.CategoriesViewModel
+import pro.luntan.spendsense.categories.model.CategoriesRepository
 import pro.luntan.spendsense.common.ui.calendar.DatePickerViewModel
 import pro.luntan.spendsense.platform.DeviceInfo
 import pro.luntan.spendsense.root.RootViewModel
@@ -19,10 +21,17 @@ object StorageModule {
     }
 }
 
+object RepositoriesModule {
+    val repositories = module {
+        single { CategoriesRepository() }
+    }
+}
+
 object ViewModelsModule{
     val viewModels = module {
         single { RootViewModel(get()) }
         factory { SettingsViewModel(get(), get()) }
         single { DatePickerViewModel() }
+        single { CategoriesViewModel(get()) }
     }
 }

@@ -27,7 +27,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.font.FontWeight
@@ -39,7 +38,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.datetime.DayOfWeek
 import org.jetbrains.compose.resources.InternalResourceApi
-import org.jetbrains.compose.resources.imageResource
 import org.jetbrains.compose.resources.vectorResource
 import pro.luntan.spendsense.common.ui.calendar.DatePickerViewModel
 import pro.luntan.spendsense.common.ui.calendar.extensions.fromSunday
@@ -48,8 +46,6 @@ import pro.luntan.spendsense.common.ui.calendar.model.CalendarLabel
 import pro.luntan.spendsense.common.ui.calendar.model.CalendarMonth
 import pro.luntan.spendsense.common.ui.calendar.model.CalendarWeek
 import spendsense.sharedui.generated.resources.Res
-import spendsense.sharedui.generated.resources.ic_calendar
-import spendsense.sharedui.generated.resources.ic_categories
 import spendsense.sharedui.generated.resources.ic_chevron_left_24
 import spendsense.sharedui.generated.resources.ic_chevron_right_24
 
