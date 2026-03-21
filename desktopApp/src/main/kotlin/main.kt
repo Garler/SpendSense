@@ -2,11 +2,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import pro.luntan.spendsense.di.getKoinInstance
 import pro.luntan.spendsense.di.initKoin
-import java.awt.Dimension
 import pro.luntan.spendsense.root.compose.RootScreen
-import pro.luntan.spendsense.root.RootViewModel
+import java.awt.Dimension
 
 fun main() = application {
 
