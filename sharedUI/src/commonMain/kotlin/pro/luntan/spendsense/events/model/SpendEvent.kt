@@ -6,6 +6,8 @@ import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.plus
 import kotlinx.datetime.toLocalDateTime
+import pro.luntan.spendsense.categories.model.Category
+import pro.luntan.spendsense.common.ui.calendar.model.CalendarLabel
 import pro.luntan.spendsense.extensions.now
 import kotlin.time.Clock
 
@@ -41,3 +43,16 @@ data class SpendEvent(
         }
     }
 }
+
+fun SpendEvent.toUI(category: Category) = SpendEventUI(
+    id = id,
+    category = category,
+    title = title,
+    cost = cost
+)
+
+fun SpendEvent.toCalendarLabel(category: Category) = CalendarLabel(
+    id = id,
+    colorHex = category.colorHex,
+    localDate = date
+)

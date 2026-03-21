@@ -12,7 +12,7 @@ import pro.luntan.spendsense.categories.CategoriesScreen
 import pro.luntan.spendsense.common.ui.theme.AppTheme
 import pro.luntan.spendsense.common.ui.theme.AppThemeProvider
 import pro.luntan.spendsense.di.getKoinInstance
-import pro.luntan.spendsense.events.EventsScreen
+import pro.luntan.spendsense.events.list.compose.EventsScreen
 import pro.luntan.spendsense.root.RootViewModel
 import pro.luntan.spendsense.root.model.AppTab
 import pro.luntan.spendsense.settings.compose.SettingsScreen
@@ -42,7 +42,7 @@ fun RootScreen() {
 fun BoxScope.RootNavigation(selectedTab: AppTab) {
     when(selectedTab){
         AppTab.Categories -> CategoriesScreen(getKoinInstance())
-        AppTab.Events -> EventsScreen()
+        AppTab.Events -> EventsScreen(getKoinInstance())
         AppTab.Settings -> SettingsScreen(getKoinInstance())
     }
 }

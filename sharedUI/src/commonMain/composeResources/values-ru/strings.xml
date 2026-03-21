@@ -6,4 +6,9 @@
     <string name="title_category_placeholder">Заголовок категории</string>
     <string name="subtitle_category_placeholder">Описание</string>
     <string name="save">Сохранить</string>
+    <string name="empty_category">Без категории</string>
+    <string name="category">Категория</string>
+    <string name="date">Дата</string>
+    <string name="spend_to">Потрачено на...</string>
+    <string name="cost">Сумма траты</string>
 </resources>
