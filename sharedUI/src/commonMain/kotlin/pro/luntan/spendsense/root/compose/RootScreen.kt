@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import pro.luntan.spendsense.categories.CategoriesScreen
+import pro.luntan.spendsense.categories.list.compose.CategoriesScreen
 import pro.luntan.spendsense.common.ui.theme.AppTheme
 import pro.luntan.spendsense.common.ui.theme.AppThemeProvider
 import pro.luntan.spendsense.di.getKoinInstance

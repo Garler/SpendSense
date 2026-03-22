@@ -9,7 +9,7 @@ import pro.luntan.spendsense.categories.create.toCategory
 import pro.luntan.spendsense.categories.model.Category
 import pro.luntan.spendsense.extensions.now
 import pro.luntan.spendsense.categories.list.CategoriesViewModel.State
-import pro.luntan.spendsense.categories.model.CategoriesRepository
+import pro.luntan.spendsense.categories.CategoriesRepository
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

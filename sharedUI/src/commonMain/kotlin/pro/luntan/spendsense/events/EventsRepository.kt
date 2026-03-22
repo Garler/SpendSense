@@ -1,11 +1,12 @@
 package pro.luntan.spendsense.events
 
-import kotlinx.coroutines.flow.flow
 import pro.luntan.spendsense.events.model.SpendEvent
-import pro.luntan.spendsense.extensions.appLog
+import pro.luntan.spendsense.events.model.SpendEventDao
 
-class EventsRepository {
-    fun getAllFlow() = flow { emit(SpendEvent.getStubs()) }
+class EventsRepository (
+    private val dao: SpendEventDao
+) {
+    fun getAllFlow() = dao.getAllFlow()
 
-    fun create(spendEvent: SpendEvent) = appLog("create event $spendEvent")
+    suspend fun create(spendEvent: SpendEvent) = dao.insert(spendEvent)
 }

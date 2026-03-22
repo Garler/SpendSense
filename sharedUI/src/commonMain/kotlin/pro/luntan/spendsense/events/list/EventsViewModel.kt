@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.launch
 import pro.luntan.spendsense.base.BaseViewModel
 import pro.luntan.spendsense.base.BaseViewState
-import pro.luntan.spendsense.categories.model.CategoriesRepository
+import pro.luntan.spendsense.categories.CategoriesRepository
 import pro.luntan.spendsense.categories.model.Category
 import pro.luntan.spendsense.common.ui.calendar.model.CalendarDay
 import pro.luntan.spendsense.common.ui.calendar.model.CalendarLabel

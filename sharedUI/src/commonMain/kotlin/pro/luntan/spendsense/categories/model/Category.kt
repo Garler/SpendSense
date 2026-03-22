@@ -1,5 +1,6 @@
 package pro.luntan.spendsense.categories.model
 
+import db.categories.CategoryDb
 import kotlinx.datetime.LocalDateTime
 import pro.luntan.spendsense.extensions.now
 
@@ -8,7 +9,7 @@ data class Category(
     val title: String,
     val description: String,
     val createdAt: LocalDateTime,
-    val updateAt: LocalDateTime,
+    val updatedAt: LocalDateTime,
     val colorHex: String
 ){
     companion object {
@@ -17,7 +18,7 @@ data class Category(
             title = "",
             description = "",
             createdAt = LocalDateTime.now(),
-            updateAt =  LocalDateTime.now(),
+            updatedAt =  LocalDateTime.now(),
             colorHex = ""
         )
         fun getStubs() = List(20) { index ->
@@ -25,3 +26,21 @@ data class Category(
         }
     }
 }
+
+fun CategoryDb.toEntity() = Category(
+    id = id,
+    title = title.orEmpty(),
+    description = description.orEmpty(),
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    colorHex = colorHex,
+)
+
+fun Category.toDb() = CategoryDb(
+    id = id,
+    title = title,
+    description = description,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    colorHex = colorHex,
+)

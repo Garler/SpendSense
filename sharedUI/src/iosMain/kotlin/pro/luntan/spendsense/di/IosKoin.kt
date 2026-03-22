@@ -1,13 +1,16 @@
 package pro.luntan.spendsense.di
 
+import app.cash.sqldelight.db.SqlDriver
+import app.cash.sqldelight.driver.native.NativeSqliteDriver
 import com.russhwolf.settings.NSUserDefaultsSettings
 import com.russhwolf.settings.Settings
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import platform.Foundation.NSUserDefaults
+import pro.luntan.spendsense.db.AppDb
 
 actual val platformModule: Module = module {
-
+    single <SqlDriver>{ NativeSqliteDriver(AppDb.Schema, "AppDb") }
 }
 
 object IosKoin{

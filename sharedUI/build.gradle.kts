@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -7,6 +5,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.android.kmp.library)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -37,6 +36,9 @@ kotlin {
 
             //Datetime
             implementation(libs.datetime)
+
+            //Sqldelight
+            implementation(libs.sqldelight.coroutines.extensions)
         }
 
         commonTest.dependencies {
@@ -45,10 +47,16 @@ kotlin {
         }
 
         androidMain.dependencies {
+                implementation(libs.sqldelight.android.driver)
         }
 
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation(libs.sqldelight.desktop.driver)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.sqldelight.native.driver)
         }
 
     }
@@ -78,5 +86,14 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+sqldelight {
+    databases {
+        create("AppDb") {
+            packageName.set("pro.luntan.spendsense.db")
+            schemaOutputDirectory.set(file("src/commonMain/sqldelight/db"))
+        }
     }
 }
