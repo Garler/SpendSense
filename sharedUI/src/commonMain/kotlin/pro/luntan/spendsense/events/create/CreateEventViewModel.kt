@@ -31,7 +31,8 @@ class CreateEventViewModel : BaseViewModel<State, Event>() {
                 date = date,
                 categoryId = category.id,
                 createdAt = now,
-                updatedAt = now
+                updatedAt = now,
+                note = note
             )
         }
         resetState()
@@ -43,14 +44,16 @@ class CreateEventViewModel : BaseViewModel<State, Event>() {
         val title: String,
         val category: Category,
         val date: LocalDate,
-        val cost: Double
+        val cost: Double,
+        val note: String
     ) : BaseViewState {
         companion object {
             val NONE = State(
                 title = "",
                 category = Category.NONE,
                 date = LocalDate.now(),
-                cost = 0.0
+                cost = 0.0,
+                note = ""
             )
         }
     }

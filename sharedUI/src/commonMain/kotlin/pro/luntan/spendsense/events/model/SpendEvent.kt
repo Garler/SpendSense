@@ -1,5 +1,6 @@
 package pro.luntan.spendsense.events.model
 
+import db.events.EventDb
 import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
@@ -18,7 +19,8 @@ data class SpendEvent(
     val cost: Double,
     val date: LocalDate,
     val createdAt: LocalDateTime,
-    val updatedAt: LocalDateTime
+    val updatedAt: LocalDateTime,
+    val note: String
 ) {
     companion object {
         val NONE = SpendEvent(
@@ -28,19 +30,9 @@ data class SpendEvent(
             cost = 0.0,
             date = LocalDate.now(),
             createdAt = LocalDateTime.now(),
-            updatedAt = LocalDateTime.now()
+            updatedAt = LocalDateTime.now(),
+            note = ""
         )
-
-        fun getStubs() = List(20) { index ->
-            NONE.copy(
-                id = index.toString(),
-                title = "event $index",
-                date = Clock.System.now()
-                    .plus(index, DateTimeUnit.DAY, TimeZone.currentSystemDefault())
-                    .toLocalDateTime(TimeZone.currentSystemDefault())
-                    .date
-            )
-        }
     }
 }
 
@@ -55,4 +47,26 @@ fun SpendEvent.toCalendarLabel(category: Category) = CalendarLabel(
     id = id,
     colorHex = category.colorHex,
     localDate = date
+)
+
+fun SpendEvent.toDb() = EventDb(
+    id = id,
+    categoryId = categoryId,
+    title = title,
+    cost = cost,
+    date = date,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    note = note
+)
+
+fun EventDb.toEntity() = SpendEvent(
+    id = id,
+    categoryId = categoryId,
+    title = title.orEmpty(),
+    cost = cost ?: 0.0,
+    date = date,
+    createdAt = createdAt,
+    updatedAt = updatedAt,
+    note = note.orEmpty()
 )

@@ -61,7 +61,7 @@ fun BoxScope.EventsScreen(
             }
         }
 
-        FAB { scope.launch { sheetState.show() } }
+        FAB { showSheet = true }
     }
 
     if (showSheet) {
@@ -82,7 +82,10 @@ fun BoxScope.EventsScreen(
                 viewModel.createEvent(newEvent)
                 scope.launch {
                     sheetState.hide()
-                    showSheet = false
+                }.invokeOnCompletion {
+                    if (!sheetState.isVisible) {
+                        showSheet = false
+                    }
                 }
             }
         }
